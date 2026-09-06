@@ -11,6 +11,11 @@
 #canvas{display:block;width:100%;height:100%;outline:none;touch-action:none}
 .overlay{position:fixed;inset:0;display:grid;place-content:center;padding:24px;text-align:center;background:#10252ef5;z-index:2}
 .overlay[hidden]{display:none}.kicker{color:#a1c8c3;font-size:12px;letter-spacing:4px}h1{font-size:clamp(28px,6vw,54px);margin:12px 0}p{line-height:1.65;margin:8px 0;color:#adc0c3}button{min-width:170px;min-height:52px;border:1px solid #d38670;background:#a83a40;color:#fff6e6;font:600 18px system-ui;cursor:pointer;padding:12px 28px;border-radius:4px;margin:16px auto 4px}button:focus-visible{outline:3px solid #8ed5ce;outline-offset:4px}button:disabled{opacity:.6;cursor:wait}progress{width:min(420px,80vw);height:12px;margin:16px auto;accent-color:#8ac8be}#status{font-size:14px;max-width:620px;overflow-wrap:anywhere}small{display:block;color:#7e999e;line-height:1.6;margin-top:14px}#rotate{z-index:3;display:none}.phone{font-size:54px}
+#welcome{place-content:safe center start;grid-template-columns:minmax(0,520px);text-align:left;overflow-y:auto;padding-inline:clamp(24px,6vw,94px);background:linear-gradient(90deg,rgba(6,19,30,.64),rgba(6,19,30,.12)),url('title-art.png') center/cover no-repeat}
+#welcome button,#welcome progress{margin-left:0}
+#welcome h1{font-size:clamp(38px,6vw,84px);letter-spacing:.04em}
+.credit{display:grid;gap:8px;margin:14px 0 20px}.signature{display:flex;align-items:center;gap:16px}.signature img{width:83px;height:26px}.signature strong{font-size:26px;letter-spacing:.07em;color:#e9e3d3}.credit a{width:fit-content;font-size:14px;color:#adc0c3;text-decoration:none}.credit a:hover{text-decoration:underline}.credit a:focus-visible{outline:2px solid #8ed5ce;outline-offset:4px}
+@media(max-height:460px){#welcome h1{font-size:36px}.credit{gap:4px;margin:6px 0 10px}.signature img{width:64px;height:20px}.signature strong{font-size:20px}.credit a{font-size:13px}}
 @media(orientation:portrait){.touch #rotate{display:grid}}
 @media(max-height:460px){h1{font-size:30px;margin:4px 0}.kicker{font-size:11px}p{font-size:13px;margin:3px 0}button{margin:10px auto 0}small{font-size:11px;margin-top:6px}}
 </style>
@@ -23,6 +28,10 @@
 <section id="welcome" class="overlay" aria-label="开始游戏">
 <h1>江滩夜话</h1>
 <p>0.3 试玩版 · 十段主场 · 虚构港区</p>
+<div class="credit">
+  <div class="signature"><img src="cwen-mark.svg" alt="" aria-hidden="true" width="165" height="52"><strong>C.WEN</strong></div>
+  <a href="mailto:cwen@hust.edu.cn">cwen@hust.edu.cn</a>
+</div>
 <p id="instructions">电脑：WASD 移动，J 攻击，K 蓄力，L 互动。</p>
 <button id="start" type="button">开始游戏</button>
 <progress id="progress" hidden aria-label="游戏资源加载进度"></progress>
@@ -34,7 +43,7 @@
 <script src="index.js"></script>
 <script>
 'use strict';
-const config={"args":[],"canvasResizePolicy":0,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":73378700,"index.wasm":39514754},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
+const config={"args":[],"canvasResizePolicy":0,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":73528956,"index.wasm":39514754},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
 const params=new URLSearchParams(location.search);
 const touch=matchMedia('(pointer:coarse)').matches || navigator.maxTouchPoints>0 || params.get('touch')==='1';
 document.documentElement.classList.toggle('touch',touch);
