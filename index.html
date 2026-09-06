@@ -22,7 +22,7 @@
 <div id="stage"><canvas id="canvas" tabindex="0" aria-label="江滩夜话游戏画面"></canvas></div>
 <section id="welcome" class="overlay" aria-label="开始游戏">
 <h1>江滩夜话</h1>
-<p>虚构港区 · 单人闯关</p>
+<p>0.3 试玩版 · 十段主场 · 虚构港区</p>
 <p id="instructions">电脑：WASD 移动，J 攻击，K 蓄力，L 互动。</p>
 <button id="start" type="button">开始游戏</button>
 <progress id="progress" hidden aria-label="游戏资源加载进度"></progress>
@@ -34,7 +34,7 @@
 <script src="index.js"></script>
 <script>
 'use strict';
-const config={"args":[],"canvasResizePolicy":0,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":72825936,"index.wasm":39514754},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
+const config={"args":[],"canvasResizePolicy":0,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":73378700,"index.wasm":39514754},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
 const params=new URLSearchParams(location.search);
 const touch=matchMedia('(pointer:coarse)').matches || navigator.maxTouchPoints>0 || params.get('touch')==='1';
 document.documentElement.classList.toggle('touch',touch);
