@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#10252e">
+<title>江滩双截龙 · 在线试玩</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#0b1b24;color:#e9e3d3;font-family:system-ui,"Microsoft YaHei",sans-serif}
+#stage{position:fixed;inset:0;padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
+#canvas{display:block;width:100%;height:100%;outline:none;touch-action:none}
+.overlay{position:fixed;inset:0;display:grid;place-content:center;padding:24px;text-align:center;background:#10252ef5;z-index:2}
+.overlay[hidden]{display:none}.kicker{color:#a1c8c3;font-size:12px;letter-spacing:4px}h1{font-size:clamp(28px,6vw,54px);margin:12px 0}p{line-height:1.65;margin:8px 0;color:#adc0c3}button{min-width:170px;min-height:52px;border:1px solid #d38670;background:#a83a40;color:#fff6e6;font:600 18px system-ui;cursor:pointer;padding:12px 28px;border-radius:4px;margin:16px auto 4px}button:focus-visible{outline:3px solid #8ed5ce;outline-offset:4px}button:disabled{opacity:.6;cursor:wait}progress{width:min(420px,80vw);height:12px;margin:16px auto;accent-color:#8ac8be}#status{font-size:14px;max-width:620px;overflow-wrap:anywhere}small{display:block;color:#7e999e;line-height:1.6;margin-top:14px}#rotate{z-index:3;display:none}.phone{font-size:54px}
+@media(orientation:portrait){.touch #rotate{display:grid}}
+@media(max-height:460px){h1{font-size:30px;margin:4px 0}.kicker{font-size:11px}p{font-size:13px;margin:3px 0}button{margin:10px auto 0}small{font-size:11px;margin-top:6px}}
+</style>
+<link id="-gd-engine-icon" rel="icon" type="image/png" href="index.icon.png" />
+<link rel="apple-touch-icon" href="index.apple-touch-icon.png"/>
+
+</head>
+<body>
+<div id="stage"><canvas id="canvas" tabindex="0" aria-label="江滩双截龙游戏画面"></canvas></div>
+<section id="welcome" class="overlay" aria-label="开始游戏">
+<div class="kicker">HANKOU / RIVERFRONT BRAWLER</div>
+<h1>江滩双截龙</h1>
+<p>潮起汉口 · 四幕江岸，借势开打</p>
+<p id="instructions">电脑：WASD 移动，J 攻击，K 蓄力，L 互动。</p>
+<button id="start" type="button">开始游戏</button>
+<progress id="progress" hidden aria-label="游戏资源加载进度"></progress>
+<p id="status" role="status" aria-live="polite">免登录 · 单人闯关 · 首次加载需要下载游戏资源</p>
+<small>手机请横屏。触碰游戏启用声音；切换应用会暂停。<br>需要 WebGL 2.0，手机性能与浏览器支持可能不同。</small>
+</section>
+<section id="rotate" class="overlay" aria-label="横屏提示"><div class="phone">↻</div><h1>请将手机横过来</h1><p>左手摇杆，右手拳脚。横屏后继续。</p></section>
+<noscript><div class="overlay">此游戏需要启用 JavaScript。</div></noscript>
+<script src="index.js"></script>
+<script>
+'use strict';
+const config={"args":[],"canvasResizePolicy":0,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":78158312,"index.wasm":39514754},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
+const params=new URLSearchParams(location.search);
+const touch=matchMedia('(pointer:coarse)').matches || navigator.maxTouchPoints>0 || params.get('touch')==='1';
+document.documentElement.classList.toggle('touch',touch);
+config.args=['--','--autostart'];
+if(touch)config.args.push('--touch');
+if(params.get('qa')==='1')config.args.push('--web-test');
+const canvas=document.getElementById('canvas');
+const engine=new Engine(config);
+const start=document.getElementById('start');
+const status=document.getElementById('status');
+const progress=document.getElementById('progress');
+let started=false;
+if(touch)document.getElementById('instructions').textContent='左侧摇杆：移动 / 外推奔跑；右侧按钮：拳脚、跳跃、蓄力、互动。';
+function resize(){
+ const rect=canvas.getBoundingClientRect();
+ const scale=Math.min(devicePixelRatio||1,1280/rect.width,720/rect.height);
+ canvas.width=Math.max(1,Math.round(rect.width*scale));
+ canvas.height=Math.max(1,Math.round(rect.height*scale));
+}
+new ResizeObserver(resize).observe(document.getElementById('stage'));
+window.addEventListener('resize',resize);
+canvas.addEventListener('contextmenu',event=>event.preventDefault());
+canvas.addEventListener('webglcontextlost',()=>{
+ document.getElementById('welcome').hidden=false;
+ status.textContent='图形上下文已中断，请重新载入游戏。';
+ start.textContent='重新载入';start.disabled=false;
+});
+start.addEventListener('click',async()=>{
+ if(started){location.reload();return;}
+ const missing=Engine.getMissingFeatures({threads:false});
+ if(missing.length){status.textContent='当前浏览器缺少：'+missing.join('、')+'。请尝试更新浏览器。';return;}
+ started=true;start.disabled=true;start.textContent='正在加载';progress.hidden=false;
+ status.textContent='正在下载资源并初始化 3D 场景…';
+ // Fullscreen/orientation are best-effort; browser tabs may refuse either request.
+ if(touch&&params.get('qa')!=='1'){
+  try{await document.documentElement.requestFullscreen?.();await screen.orientation?.lock?.('landscape');}catch{}
+ }
+ resize();
+ try{
+  await engine.startGame({onProgress(current,total){
+   if(total>0){progress.max=total;progress.value=current;status.textContent='加载资源 '+Math.round(current/total*100)+'%';}
+   else{progress.removeAttribute('value');status.textContent='正在初始化场景，请稍候…';}
+  }});
+  document.getElementById('welcome').hidden=true;canvas.focus();canvas.dataset.ready='true';
+ }catch(error){
+  console.error(error);status.textContent='启动失败：'+(error?.message||String(error));start.textContent='重新载入';start.disabled=false;
+ }
+});
+</script>
+</body>
+</html>
+
