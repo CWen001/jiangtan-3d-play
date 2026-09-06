@@ -1,19 +1,21 @@
-# 江滩夜话 · 在线试玩
+# 江滩夜话 · 0.4 战斗试玩
 
 **C.WEN** · [cwen@hust.edu.cn](mailto:cwen@hust.edu.cn)
 
-新版雨夜港区封面与旧版红青五斜杠 Logo 同步用于网页入口和游戏标题页。
+原创虚构港区、十段主场。0.4 接入约 30 个动作／分支、六类独立木雕敌人、实际拳脚／器械接触、抓投与防守出口、局部受光和空间脚步。此为待玩家反馈的试玩构建，不代表完整动作和平衡已经验收通过。
 
-0.3 试玩版：十段机制主场、木雕风格主角、持箱踢击、二维网面和雨夜氛围。舞台为虚构港区，不对应真实城市。打开网页，无需注册；手机请横屏。
+**验收边界**：本轮 Windows 集中检查在旧骑手场景引用处启动失败，引用已修正但未重复检查。连续十段、约 20 分钟流程、全部动作、手机真机与实体手柄尚未验证。
 
-暂停 → 试玩选段（重开本局）可直接挑选主场。网页版采用 Compatibility/WebGL 2.0，雨量和遮雨效果简化，不等同于 Windows 的全部光照效果。完整路线、平衡和约 20 分钟目标仍待试玩验证。
+- WASD 移动，双击左右跑；J 刺／直／勾，↓J 腹打。
+- 点 K：↑ 上挑、↓ 低扫、左右前蹬、无方向回旋；长按 K 蓄力。
+- 跑动 J 肩撞、K 滑踢；空中 J 飞踢、K 下落踢；Space 跳跃、Shift 闪避。
+- **I 防御**，精准挡或成功闪避后可手动 J 反击。
+- L 优先抓正前方站立敌人；**I + L 明确操作物件／机关**。持物 L 投、I 放下。
+- 抓住后 J 膝撞，方向 J 肘击；K 推、背向 K 后摔、↑K 过肩、L 拖撞；I 找收招空隙挣脱。
+- Esc 暂停；“试玩选段（重开本局）”可直接选主场。
 
-左摇杆移动（外推奔跑），右侧攻击、跳跃、蓄力投掷及情境互动；支持多指同时操作。
-电脑：WASD 移动，J 攻击，K 蓄力，Space 跳跃，L 互动，H 防御/放下，Shift 闪避，Esc 暂停。
+手机请横屏；摇杆和攻击／重击／互动／防御按钮遵循同一语义，支持多指。Web 使用单线程 Compatibility/WebGL 2.0，保留局部灯光，局部阴影、复杂雨碰撞与反射不等同于 Windows。
 
-本仓库仅保存可部署的 Godot Web 导出文件，不是开发源码仓库。
-首次资源约 110 MiB（包含封面背景）（未计传输压缩）。需要 WebGL 2.0；手机 Safari/Chrome 的实际性能仍需真机验证。游戏为试玩版，不提供账号、联网对战或进度云存档。
+首次资源约 120 MiB，建议 Wi-Fi；无需账号，没有联网对战或云存档。本仓库仅保存部署文件，不是开发源码仓库。
 
-Font: Dock Game Subset (447 codepoints), derived from Noto Sans SC under OFL; copyright and license in OFL-NotoSansSC.txt.
-
-Third-party notices: Quaternius CC0 components (Quaternius-CC0.txt); [Godot Engine license](https://godotengine.org/license/).
+Font: Dock Game Subset (474 codepoints), derived from Noto Sans SC under OFL; see OFL-NotoSansSC.txt. Legacy Quaternius CC0 components: Quaternius-CC0.txt. [Godot license](https://godotengine.org/license/).
