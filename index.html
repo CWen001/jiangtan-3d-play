@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#10252e">
-<title>江滩双截龙 · 在线试玩</title>
+<title>江滩夜话 · 在线试玩</title>
 <style>
 *{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#0b1b24;color:#e9e3d3;font-family:system-ui,"Microsoft YaHei",sans-serif}
 #stage{position:fixed;inset:0;padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
@@ -19,9 +19,9 @@
 
 </head>
 <body>
-<div id="stage"><canvas id="canvas" tabindex="0" aria-label="江滩双截龙游戏画面"></canvas></div>
+<div id="stage"><canvas id="canvas" tabindex="0" aria-label="江滩夜话游戏画面"></canvas></div>
 <section id="welcome" class="overlay" aria-label="开始游戏">
-<h1>江滩双截龙</h1>
+<h1>江滩夜话</h1>
 <p>虚构港区 · 单人闯关</p>
 <p id="instructions">电脑：WASD 移动，J 攻击，K 蓄力，L 互动。</p>
 <button id="start" type="button">开始游戏</button>
@@ -34,7 +34,7 @@
 <script src="index.js"></script>
 <script>
 'use strict';
-const config={"args":[],"canvasResizePolicy":0,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":72826320,"index.wasm":39514754},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
+const config={"args":[],"canvasResizePolicy":0,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":72825936,"index.wasm":39514754},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
 const params=new URLSearchParams(location.search);
 const touch=matchMedia('(pointer:coarse)').matches || navigator.maxTouchPoints>0 || params.get('touch')==='1';
 document.documentElement.classList.toggle('touch',touch);
