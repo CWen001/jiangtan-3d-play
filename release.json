@@ -1,8 +1,8 @@
 {
-  "release": "2026-09-11-current-updates",
-  "built_at": "2026-09-11T09:17:13.897925+00:00",
-  "pck_bytes": 145655624,
-  "pck_sha256": "bca565912d6b9ba44f830ea5ea7240f44e728b1a505d2a1c7b8105dc62ee7c33",
+  "release": "2026-09-11-red-pendants",
+  "built_at": "2026-09-11T11:33:24.358610+00:00",
+  "pck_bytes": 145656504,
+  "pck_sha256": "6cbcf28cb188e59ad863f1fc6a69c27ac5355d61e4e8edd37607023f87d4f58b",
   "files": {
     "OFL-NotoSansSC.txt": {
       "bytes": 4388,
@@ -22,7 +22,7 @@
     },
     "index.html": {
       "bytes": 11064,
-      "sha256": "f80f45bea6634f6e546e941667a800e3b94c15b64c593f0f710d360f2a13bcff"
+      "sha256": "7c61e581e68156ac45e181c46ba220c7bedb918c651994a9b0bc729076467e7a"
     },
     "index.js": {
       "bytes": 279815,
@@ -54,15 +54,15 @@
     },
     "index.pck.part0": {
       "bytes": 67108864,
-      "sha256": "6fa37f80fa7e5e2a31bc5ac5799d22c4f1921c54dddb02f0723bab1277caf63f"
+      "sha256": "ccfc9fcb0c5f63b04607630be37051c69a5592afffa133e88ee77301fcd3d4c4"
     },
     "index.pck.part1": {
       "bytes": 67108864,
-      "sha256": "1d976b0157d30b66068ef7c9650e87a0cd1be61de2f439b02064fdce2f97e5da"
+      "sha256": "d722c0013ef4ee0059032df59ee16bb97b3f5b649549b62b67e5e3608b566523"
     },
     "index.pck.part2": {
-      "bytes": 11437896,
-      "sha256": "499fe0ef60a9b55eb6e1723aac6f3eb0b8f2e949d73e8bdf0604b88f4d048c18"
+      "bytes": 11438776,
+      "sha256": "fbacd7f7dfa4ab2b771ec433e568dc72f3dbf2cf39c9c36669036333240414ec"
     }
   }
 }
