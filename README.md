@@ -18,6 +18,8 @@
 
 手机请横屏；摇杆和攻击／重击／互动／防御按钮遵循同一语义，支持多指。Web 使用单线程 Compatibility/WebGL 2.0，保留局部灯光，局部阴影、复杂雨碰撞与反射不等同于 Windows。
 
-首次资源约 120 MiB，建议 Wi-Fi；无需账号，没有联网对战或云存档。本仓库仅保存部署文件，不是开发源码仓库。
+**自动共享排行榜**：网页首页点击“通关排行榜”即可查看。完整通关后自动生成昵称并上传用时、最高连击，无需输入或注册；游戏结算也可看榜。用时越短排名越高，暂停不计、检查点重试累计，试玩选段不上榜。ScoreDrop 免费服务保留最快二十条，显示前十；仅社区成绩，不保证防作弊。自动上传随机昵称、用时、连击和随机记录 ID，不要求真实姓名。断网不影响游戏，下次打开游戏内榜单会重试。
 
-Font: Dock Game Subset (474 codepoints), derived from Noto Sans SC under OFL; see OFL-NotoSansSC.txt. Legacy Quaternius CC0 components: Quaternius-CC0.txt. [Godot license](https://godotengine.org/license/).
+首次资源约 176 MiB，建议 Wi-Fi；大资源包按 64 MiB 分片以满足 GitHub 文件上限。无需账号，没有联网对战或云存档。本仓库仅保存部署文件，不是开发源码仓库。本轮完成本地分片加载、原生自动成绩回归及独立测试榜真实跨域读写；不是完整通关验收。
+
+Font: Dock Game Subset (539 codepoints), derived from Noto Sans SC under OFL; see OFL-NotoSansSC.txt. Legacy Quaternius CC0 components: Quaternius-CC0.txt. [Godot license](https://godotengine.org/license/).
