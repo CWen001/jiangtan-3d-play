@@ -1,5 +1,13 @@
 # 江滩夜话 · 0.4.1 轻松试玩
 
+## 2026-09-11 更新
+
+- 主角黑红拼色皮衣；开场暖黄灯，后续淡红灯，保留近灯短光束与实际光影；去掉“货运处”文字。
+- 敌人安全临边追击、坡台与卷帘门卡住修正；转桥、货梯、摆钩、冲水等默认循环，可反复停机／复机。
+- 修正地面、活动平台与水面重叠闪烁；同步当前封面、操作说明与共享排行榜。
+- 本次发布仅做构建完整性与公网启动检查，不重复完整游戏流程；手机真机与十段连续通关仍待验证。
+
+
 根据试玩反馈降低默认难度：敌人 HP −25%、对玩家伤害 −35%、同时近身进攻 3→2 人。延长预备与收招间隔，减少连追、防守反制，增加受击和被抓后的反应空隙。玩家招式不削弱。聚焦规则检查已通过，完整流程与实际手感仍待试玩反馈。
 
 **C.WEN** · [cwen@hust.edu.cn](mailto:cwen@hust.edu.cn)
@@ -20,6 +28,6 @@
 
 **自动共享排行榜**：网页首页点击“通关排行榜”即可查看。完整通关后自动生成昵称并上传用时、最高连击，无需输入或注册；游戏结算也可看榜。用时越短排名越高，暂停不计、检查点重试累计，试玩选段不上榜。ScoreDrop 免费服务保留最快二十条，显示前十；仅社区成绩，不保证防作弊。自动上传随机昵称、用时、连击和随机记录 ID，不要求真实姓名。断网不影响游戏，下次打开游戏内榜单会重试。
 
-首次资源约 176 MiB，建议 Wi-Fi；大资源包按 64 MiB 分片以满足 GitHub 文件上限。无需账号，没有联网对战或云存档。本仓库仅保存部署文件，不是开发源码仓库。本轮完成本地分片加载、原生自动成绩回归及独立测试榜真实跨域读写；不是完整通关验收。
+首次主要资源约 180 MiB，建议 Wi-Fi；大资源包按 64 MiB 分片以满足 GitHub 文件上限。无需账号，没有联网对战或云存档。本仓库仅保存部署文件，不是开发源码仓库。本轮完成本地分片加载、原生自动成绩回归及独立测试榜真实跨域读写；不是完整通关验收。
 
-Font: Dock Game Subset (539 codepoints), derived from Noto Sans SC under OFL; see OFL-NotoSansSC.txt. Legacy Quaternius CC0 components: Quaternius-CC0.txt. [Godot license](https://godotengine.org/license/).
+Font: Dock Game Subset (501 codepoints), derived from Noto Sans SC under OFL; see OFL-NotoSansSC.txt. Legacy Quaternius CC0 components: Quaternius-CC0.txt. [Godot license](https://godotengine.org/license/).
